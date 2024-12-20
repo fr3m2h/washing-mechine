@@ -1,0 +1,284 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #1b1b1b;
+  background-color: #ebebeb;
+}
+
+a {
+  /*
+      Getting rid of default formatting for <a> elements. `inherits` tells that
+      `a` elements should use the value set on its parent for these properties.
+  */
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.top-header {
+  background: #495965;
+  padding-right: 20px;
+  min-width: 300px;
+}
+.top-header .burger-icon {
+  width: 50px;
+  height: 50px;
+  background-image: url(../assets/img/burger_menu_icon.png);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+}
+.top-header .content {
+  max-width: 1070px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: 10px;
+  row-gap: 10px;
+}
+.top-header .content .logo {
+  width: 180px;
+  height: 50px;
+  background-image: url(../assets/img/musicca-logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 20px;
+}
+.top-header .content .primary-menu, .top-header .content .secondary-menu {
+  display: flex;
+}
+.top-header .content .primary-menu {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+.top-header .content .primary-menu .menu-item {
+  background-color: #27ce00;
+  color: white;
+}
+.top-header .content .primary-menu .menu-item:hover, .top-header .content .primary-menu .menu-item.active {
+  background-color: #ebebeb;
+}
+.top-header .content .primary-menu .menu-account {
+  background-color: #009739;
+  color: white;
+}
+.top-header .content .primary-menu .menu-account:hover, .top-header .content .primary-menu .menu-item.active {
+  background-color: #ebebeb;
+}
+.top-header .content .primary-menu .account-logo {
+  background-image: url(../image/account.png);
+  background-color: #009739;
+  width: 10px;
+  height: 50px;
+  background-size: 50px 50px;
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  padding-left: 50px; /* Laisse de l'espace pour le logo */
+}
+.top-header .content .secondary-menu {
+  margin-right: 40px;
+}
+.top-header .content .secondary-menu .menu-item {
+  background-color: #27ce00;
+  height: auto;
+  color: white;
+  border-radius: 9999px;
+  margin-right: 10px;
+}
+.top-header .content .secondary-menu .menu-item:hover {
+  background-color: #009739;
+}
+.top-header .menu-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.top-header .menu-account {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.page-content {
+  max-width: 1070px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  display: flex;
+  column-gap: 20px;
+}
+.page-content .left-panel {
+  width: 25%;
+}
+.page-content .left-panel .menu {
+  background-color: white;
+}
+.page-content .left-panel .menu .menu-item {
+  font-size: 18px;
+  padding: 20px;
+  font-weight: 600;
+}
+.page-content .left-panel .menu .menu-item.active {
+  color: white;
+  background-color: #27ce00;
+}
+.page-content .left-panel .menu hr {
+  border-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top: 1px solid #ebebeb;
+}
+.page-content .right-panel {
+  width: 75%;
+}
+.page-content .right-panel .title {
+  font-size: 36px;
+  font-weight: 400;
+  color: #565656;
+}
+.page-content .right-panel .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.page-content .right-panel .cards .card {
+  background-color: white;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  flex-basis: 40%;
+  flex-grow: 1;
+}
+.page-content .right-panel .cards .card .title {
+  font-weight: 600;
+  font-size: 20px;
+}
+.page-content .right-panel .cards .card .illustration {
+  background-image: url(../image/Machine_a_laver.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 150px;
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+@media (max-width: 836px) {
+  .top-header {
+    padding: 0px;
+  }
+  .top-header .content {
+    justify-content: center;
+  }
+  .top-header .content .secondary-menu {
+    flex-grow: 1;
+  }
+}
+/* Rules for mobile screen */
+@media screen and (max-width: 480px) {
+  .top-header {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    flex-direction: row;
+  }
+  .top-header .burger-icon {
+    display: block;
+    margin-right: 0px;
+  }
+  .top-header .burger-icon.active {
+    background-image: url(../assets/img/close_menu_icon.png);
+  }
+  .top-header .burger-icon:hover {
+    cursor: pointer;
+  }
+  .top-header .content {
+    justify-content: right;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
+    display: none;
+    row-gap: 0px;
+    margin: 0px;
+    background-color: #27ce00;
+  }
+  .top-header .content .logo {
+    display: none;
+  }
+  .top-header .content .primary-menu, .top-header .content .secondary-menu {
+    flex-wrap: wrap;
+    margin: 0px;
+  }
+  .top-header .content .primary-menu .menu-item, .top-header .content .secondary-menu .menu-item {
+    color: white;
+    background-color: #27ce00;
+    width: 100%;
+    border-bottom: 1px solid #009739;
+    border-radius: 0px;
+    font-weight: 400;
+  }
+  .top-header .content .primary-menu .menu-item:hover, .top-header .content .secondary-menu .menu-item:hover {
+    background-color: #009739;
+  }
+  .top-header .content .primary-menu .menu-item.active, .top-header .content .secondary-menu .menu-item.active {
+    font-weight: 600;
+    background-color: #27ce00;
+  }
+  .top-header .content.active {
+    display: flex;
+  }
+  .page-content {
+    margin-top: 0px;
+  }
+  .page-content .left-panel {
+    display: none;
+  }
+  .page-content .right-panel {
+    width: 85%;
+    margin: auto;
+  }
+  .page-content .right-panel h1.title {
+    font-size: 30px;
+  }
+  .page-content .right-panel .cards .card {
+    border-radius: 5px;
+    flex-basis: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+  }
+  .page-content .right-panel .cards .card h2.title {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color: black;
+  }
+  .page-content .right-panel .cards .card p {
+    margin: 0px;
+    font-size: x-small;
+  }
+  .page-content .right-panel .cards .card p.card-link {
+    color: #acacac;
+    margin-top: 5px;
+  }
+  .page-content .right-panel .cards .card p.card-link:hover {
+    cursor: pointer;
+  }
+  .page-content .right-panel .cards .card .illustration {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
