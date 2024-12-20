@@ -1,5 +1,1 @@
-<h1 align="center">
-  <br>
-  washing-MEchine
-  <br>
-</h1>
+<h1 align="center">washing-MEchine</h1>
