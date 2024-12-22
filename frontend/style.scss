@@ -6,9 +6,9 @@ $text-dark-gray: #1b1b1b;
 $text-light-gray: #565656;
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: $text-dark-gray;
-    background-color: $background-gray;
+    background-color: white;
 }
 
 a {
@@ -26,145 +26,168 @@ a {
     padding-right: 20px;
     min-width: 300px;
 
-    .burger-icon {
-        width: 50px;
-        height: 50px;
-        background-image: url(../assets/img/burger_menu_icon.png);
-        background-size: 25px 25px;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: none;
-    }
-
     .content {
-        max-width: 1070px;
+        max-width: auto;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         margin-right: 10px;
         row-gap: 10px;
 
-        .logo {
-            width: 180px;
-            height: 50px;
-            background-image: url(../assets/img/musicca-logo.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin-right: 20px;
-        }
-
         .primary-menu, .secondary-menu {
             display: flex;
         }
 
         .primary-menu {
+            display: flex;
             flex-grow: 1;
             margin-right: 20px;
-            .menu-item{
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+
+            .menu-item {
+                padding-top: 18px;
+                padding-bottom: 18px;
+                padding-left: 15px;
+                padding-right: 15px;
                 background-color: $green;
-                color: white;
-                }
+            }
             .menu-item:hover, .menu-item.active {
                 background-color: $background-gray;
             }
-            .menu-account{
+            .menu-account {
                 background-color: $dark-green;
-                color: white;
-                }
-            .menu-account:hover, .menu-item.active {
-                background-color: $background-gray;
-            }
-            .account-logo{
-                background-image: url(../image/account.png);
-                background-color: $dark-green;
-                width: 10px;
-                height: 50px;
-                background-size: 50px 50px;
-                background-position: 10px center;
-                background-repeat: no-repeat;
+                padding: 18px 18px; /* Ajoute de l'espace interne */
+                background-image: url('../image/account-logo.png'); /* Chemin vers l'image */
+                background-repeat: no-repeat; /* Empêche la répétition de l'image */
+                background-position: 5px center; /* Place l'image à gauche, centrée verticalement */
+                background-size: 40px 45px; /* Redimensionne le logo */
                 padding-left: 50px; /* Laisse de l'espace pour le logo */
             }
-        }
-
-        .secondary-menu {
-            margin-right: 40px;
-            .menu-item {
-                background-color: $green;
-                height: auto;
-                color: white;
-                border-radius: 9999px;
-                margin-right: 10px;
-
-                &:hover {
-                    background-color: $dark-green;
+            .menu-tel-logo {
+                padding-bot: 18px; /* Ajoute de l'espace interne */
+                padding-top: 18px; /* Ajoute de l'espace interne */
+                font-weight: 350;
+                background-image: url('../image/tel.png'); /* Chemin vers l'image */
+                background-repeat: no-repeat; /* Empêche la répétition de l'image */
+                background-position: 20px center; /* Place l'image à gauche, centrée verticalement */
+                background-size: 13px 13px; /* Redimensionne le logo */
+                padding-left: 50px; /* Laisse de l'espace pour le logo */
+                padding-right: 5px; /* Ajoute de l'espace interne */
+                &:hover{
+                    color: $green;
                 }
+            }
+            .menu-tel{
+                font-weight: 350;
+                padding-top: 18px; /* Ajoute de l'espace interne */
+                padding-bot: 18px; /* Ajoute de l'espace interne */
+                &:hover{
+                    color: $green;
+                }
+            }
+            .menu-tel-body{
+                font-weight: 300;
+                padding-top: 18px; /* Ajoute de l'espace interne */
+                padding-bot: 18px; /* Ajoute de l'espace interne */
+                padding-right: 5px; /* Ajoute de l'espace interne */
+            }
+        }
+        .secondary-menu {
+            display: flex;
+            color: white;
+            flex-grow: 1;
+            margin-left: 100px;
+            color: white;
+            font-weight: 350;
+            font-size: 16px;
+            cursor: pointer;
+            .menu-fb{
+                padding: 17px 17px; /* Ajoute de l'espace interne */
+                background-image: url('../image/f_logo_green.png'); /* Chemin vers l'image */
+                background-repeat: no-repeat; /* Empêche la répétition de l'image */
+                background-position: 15px center; /* Place l'image à gauche, centrée verticalement */
+                background-size: 25px 25px; /* Redimensionne le logo */
+                padding-left: 50px; /* Laisse de l'espace pour le logo */
+                padding-right: 5px; /* Ajoute de l'espace interne */
             }
         }
     }
+}
 
-    .menu-item {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
-        font-size: 20px;
-        font-weight: 800;
+
+/* Logo */
+.logo-me {
+    display: flex;
+    width: 350px;
+    height: 100px;
+    background-image: url('../image/logo-maison-des-eleves.png');
+    background-size: 350px, 150px;
+    background-repeat: no-repeat;
+    background-position: 0px;
+    margin-left: 35px; /* Center the logo horizontally */
+    margin-top: 35px; /* Center the logo horizontally */
+}
+.logo-washing-mechine {
+    width: 350px;
+    height: 350px;
+    background-image: url('../image/logo-washing-mechine.png');
+    background-size: 700px, 700px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto; /* Center the logo horizontally */
+}
+
+/* Tabs */
+.tabs {
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    padding-left: 100px;
+
+    .menu {
+        max-width: 1070px;
+        margin: auto;
+        display: flex;
+        background-color: white;
         cursor: pointer;
-    }
-    .menu-account {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
-        font-size: 20px;
-        font-weight: 800;
-        cursor: pointer;
+
+        .menu-item {
+            font-size: 18px;
+            padding: 15px 20px;
+            font-weight: 300;
+            text-align: center;
+            border-radius: 5px;
+            &:hover {
+                font-weight: 800;
+                color: dark;
+            }
+            &.active {
+                font-weight: 600;
+                color: white;
+                background-color: $green;
+            }
+        }
     }
 }
 
 .page-content {
     max-width: 1070px;
-    margin-right: auto;
     margin-left: auto;
     margin-top: 20px;
 
     display: flex;
     column-gap: 20px;
 
-    .left-panel {
-        width: 25%;
-
-        .menu {
-            background-color: white;
-
-            .menu-item {
-                font-size: 18px;
-                padding: 20px;
-                font-weight: 600;
-
-                &.active {
-                    color: white;
-                    background-color: $green;
-                }
-            }
-
-            hr {
-                border-bottom: 0;
-                margin-top: 0;
-                margin-bottom: 0;
-                border-top: 1px solid $background-gray;
-            }
-        }
-    }
-
-    .right-panel {
-        width: 75%;
+    .panel {
+        width: 80%;
 
         .title {
             font-size: 36px;
-            font-weight: 400;
-            color: $text-light-gray;
+            font-weight: 500;
+            color: white;
         }
 
         .cards {
@@ -173,26 +196,49 @@ a {
             gap: 20px;
 
             .card {
-                background-color: white;
-                padding-top: 30px;
+                height: 230px;
+                border-radius: 15px;
+                background-color: $dark-gray;
+                padding-top: 15px;
                 padding-left: 30px;
                 padding-right: 30px;
                 flex-basis: 40%;
-                flex-grow: 1;
+                flex-grow: 0;
 
                 .title {
                     font-weight: 600;
                     font-size: 20px;
                 }
+                .content {
+                    display: flex; /* Organise l'image et les textes côte à côte */
+                    align-items: center; /* Centre verticalement l'image et les textes */
+                    gap: 20px;
 
-                .illustration {
-                    background-image: url(../image/Machine_a_laver.png);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    height: 150px;
-                    margin-left: -30px;
-                    margin-right: -30px;
+                    .illustration {
+                        background-image: url('../image/Machine_a_laver.png');
+                        background-size: 95%;
+                        background-color: $background-gray;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        height: 150px;
+                        width: 150px;
+                        border-radius: 10px;
+                    }
+
+                    .text-content {
+                        display: flex;
+                        flex-direction: column; /* Organise les textes verticalement */
+                        gap: 10px;
+
+                        .availability, .remaining-time {
+                            font-weight: 400;
+                            font-size: 16px;
+                            color: white;
+                            &:hover{
+                                color: $green;
+                            }
+                        }
+                    }
                 }
             }
         }
