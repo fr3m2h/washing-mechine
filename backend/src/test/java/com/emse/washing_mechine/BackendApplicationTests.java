@@ -1,4 +1,4 @@
-package com.emse.washing_mechine.backend;
+package com.emse.washing_mechine;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

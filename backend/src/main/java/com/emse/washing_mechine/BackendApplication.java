@@ -1,7 +1,8 @@
-package com.emse.washing_mechine.backend;
+package com.emse.washing_mechine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 public class BackendApplication {
