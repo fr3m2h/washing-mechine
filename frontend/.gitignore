@@ -1,3 +1,6 @@
+<<<<<<< HEAD
 .idea/*
 node_modules/*
 .DS_Store
+
+>>>>>>> 6e528fb (ajout de l'appli avec les API au format zip car certains dossiers avaient des noms trop long pour etre copier dans le dossier de l'émulateur linux)
