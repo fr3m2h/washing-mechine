@@ -19,14 +19,14 @@ Notre applications et site web seront là pour afficher les informations recueil
 
 ## Faire marcher le projet
 
-### Lancement du backend 
+### Lancement du backend
 1. Aller sur le dossier `backend/`
 2. Utilisez la commande
 
     ```
     ./gradlew --continous bootRun
     ```
-   
+
 3. Connectez-vous au serveur `http://localhost8080`
 
 ### Lancement du serveur frontend
@@ -34,10 +34,10 @@ Notre applications et site web seront là pour afficher les informations recueil
 2. Utilisez la commande
 
     ```
-    python3 -m http.server 8000
+    npm run dev
     ```
+3. Le site est disponible par défaut à l'URL http://localhost:5173/
 
-3. Connectez-vous au serveur `http://localhost8000`
 
 ### Branchement de l'embarqué
 
