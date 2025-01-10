@@ -1,135 +1,148 @@
+</html>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Washing ME'chine - Homepage</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
-    <link href="assets/stylesheets/output.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <script src="https://unpkg.com/vue@next"></script>
+  <meta charset="UTF-8">
+  <title>Washing-MEchine</title>
+  <link rel="stylesheet" href="./src/assets/header.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 </head>
 
 <body>
-<div class="top-header">
-    <div class="content">
-        <div class="primary-menu">
-            <div class="menu-account">
-                <a href="https://reservation.me-mines-saint-etienne.org/login" target="_blank">MON COMPTE</a>
-            </div>
-            <div class="menu-item">
-                <a href="https://reservation.me-mines-saint-etienne.org/camp01" target="_blank">RESERVEZ ICI</a>
-            </div>
-            <div class="menu-tel-logo">+33(0)4 77 42 93 00</div>
-            <div class="menu-tel-body">ou</div>
-            <div class="menu-tel">+33(0)4 77 42 01 83</div>
+  <header>
+    <div class="header-container">
+      <div class="header-content">
+        <div class="header-primary-menu">
+          <div class="header-account-menu">
+            <a href="https://reservation.me-mines-saint-etienne.org/login" target="_blank">
+              <img src="./src/assets/account-logo.png" alt="Account Icon" class="menu-icon"> MON COMPTE
+            </a>
+          </div>
+          <div class="header-reservation-menu">
+            <a href="https://reservation.me-mines-saint-etienne.org/camp01" target="_blank">
+              <img src="./src/assets/calendar.png" alt="Reserve Icon" class="menu-icon"> RESERVEZ ICI
+            </a>
+          </div>
+          <div class="header-phone-menu">+33(0)4 77 42 93 00 ou +33(0)4 77 42 01 83</div>
         </div>
-        <div class="secondary-menu">
-            <div class="menu-fb">
-                <a href="https://www.facebook.com/me.mines.saint.etienne" target="_blank">Suivez-nous sur Facebook !</a>
-            </div>
+        <div class="header-secondary-menu">
+          <div class="header-facebook-menu">
+            <a href="https://www.facebook.com/me.mines.saint.etienne" target="_blank">
+              <img src="./src/assets/f_logo_green.png" alt="Facebook Icon" class="menu-icon"> Suivez-nous sur Facebook
+              !
+            </a>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </header>
 
-<div class="logo-me"></div>
-<div class="tabs">
-    <div class="menu">
-        <div class="menu-item active">Disponibilités</div>
-        <div class="menu-item">
-            <a href="heure_de_pointe.html">Heures de pointe</a>
-        </div>
-    </div>
-</div>
-<div class="logo-washing-mechine"></div>
-<div class="page-content">
-    <div class="panel">
-        <div class="cards">
-            <div class="card">
-                <h2 class="title">Machine 1</h2>
-                <div class="content">
-                    <div class="illustration"></div>
-                    <div class="text-content">
-                        <div class="availability">Disponibilité</div>
-                        <div class="remaining-time">Temps restant :</div>
-                    </div>
-                </div>
-            </div>
+  <div id="app"></div>
+  <script type="module" src="./src/main.js"></script>
 
-            <div class="card">
-                <h2 class="title">Machine 2</h2>
-                <div class="content">
-                    <div class="illustration"></div>
-                    <div class="text-content">
-                        <div class="availability">Disponibilité</div>
-                        <div class="remaining-time">Temps restant :</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2 class="title">Machine 3</h2>
-                <div class="content">
-                    <div class="illustration"></div>
-                    <div class="text-content">
-                        <div class="availability">Disponibilité</div>
-                        <div class="remaining-time">Temps restant :</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2 class="title">Machine 4</h2>
-                <div class="content">
-                    <div class="illustration"></div>
-                    <div class="text-content">
-                        <div class="availability">Disponibilité</div>
-                        <div class="remaining-time">Temps restant :</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2 class="title">Machine 5</h2>
-                <div class="content">
-                    <div class="illustration"></div>
-                    <div class="text-content">
-                        <div class="availability">Disponibilité</div>
-                        <div class="remaining-time">Temps restant :</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2 class="title">Machine 6</h2>
-                <div class="content">
-                    <div class="illustration"></div>
-                    <div class="text-content">
-                        <div class="availability">Disponibilité</div>
-                        <div class="remaining-time">Temps restant :</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2 class="title">Machine 7</h2>
-                <div class="content">
-                    <div class="illustration"></div>
-                    <div class="text-content">
-                        <div class="availability">Disponibilité</div>
-                        <div class="remaining-time">Temps restant :</div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <script src="./frontend.js"></script>
-    </div>
-</div>
 </body>
 
 </html>
+
+<style>
+  /* General Reset */
+  body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  header {
+    background-color: #3b4a53;
+    /* Matches the dark background in your image */
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    /* Ensures left and right alignment */
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Primary Menu on the Left */
+  .header-primary-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    /* Pushes the secondary menu to the far right */
+  }
+
+  .header-account-menu a,
+  .header-reservation-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    background-color: #4CAF50;
+    /* Green background for buttons */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .header-account-menu a:hover,
+  .header-reservation-menu a:hover {
+    background-color: #45a049;
+    /* Slightly darker green for hover effect */
+  }
+
+  .header-phone-menu {
+    font-weight: 400;
+  }
+
+  /* Secondary Menu on the Right */
+  .header-secondary-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Aligns the secondary menu to the far right */
+  }
+
+  .header-facebook-menu a {
+    text-decoration: none;
+    color: #4CAF50;
+    /* Green color for Facebook text */
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .header-facebook-menu a:hover {
+    text-decoration: underline;
+  }
+
+  /* Icon Styling */
+  .menu-icon {
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* Additional Hover Effect */
+  .menu-icon:hover {
+    opacity: 0.8;
+  }
+</style>
