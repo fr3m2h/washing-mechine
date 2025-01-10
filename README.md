@@ -37,7 +37,7 @@ Notre applications et site web seront là pour afficher les informations recueil
     npm install
     npm run dev
     ```
-3. Le site est disponible par défaut à l'URL http://localhost:5173
+3. Le site est disponible par défaut à l'URL `http://localhost:5173`
 4. Vous pouvez modifier l'addresse du backend dans le ficher frontend/src/config.js
 
 
