@@ -23,6 +23,7 @@ On a donc essayé de contraindre le problème à des bases de données locales f
 ### Frontend web/mobile
 
 Notre application et site web seront là pour afficher les informations recueillies grâce à notre système embarqué. Nous pourrons afficher le temps restant, quelles machines sont actives ainsi que les plages horaires avec le plus de machines disponibles.
+Sur la page web, il est normal de ne voir aucune machine car la partie embarqué n'étant pas connecter au WiFi et donc au backend, la base de données reste vierge.
 
 ## Faire marcher le projet
 
@@ -76,8 +77,11 @@ Schéma explicatif des branchements :
 * Carte ESP32 A10/27 ---> OUTPUT DATA du capteur
 * Carte ESP32 GND ---> Masse (GND)
 
+Nous avons deux fichiers de code à disposition :
+- `embedded.ino` fichier avec l'entiereté du code du système embarqué
+- `embedded_commented.ino` qui ne comprend pas les fonctionnalités WiFi
 
-### Branchement de l'embarqué
+### Application
 
 Comme nous avons fait le choix de lancer le backend et le frontend localement, le téléphone émuler n'a pas accès à ces 2 entités. Il y a donc 2 version de l'appli, la première sans les API et avec une URL d'exemple pour simuler la page web, ceci permet de montrer comment l'appli fonctionne si elle avait accès à une base de données depuis l'API. Une seconde avec l'appel des APIs de codé pour utilisé le backend mais qui ne peut être testé à cause du problème expliqué précédemment.
 
