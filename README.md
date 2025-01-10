@@ -59,14 +59,14 @@ Schéma explicatif des branchements :
 * Potentiomètre Broche 3 ---> + du générateur
 
 * Capteur IN+ ---> Broche 2 du potentiomètre
-* Capteur OUT- ---> Borne + du moteur
+* Capteur IN- ---> Borne + du moteur
+* Capteur 5V ---> + Alimentation
 * Capteur GND ---> Masse (GND)
 
 * Moteur + ---> OUT du capteur
 * Moteur - ---> Masse (GND)
 
-* Carte ESP32 A0 ---> OUTPUT DATA du capteur
-* Carte ESP32 USB ---> 5V du capteur
+* Carte ESP32 A10/27 ---> OUTPUT DATA du capteur
 * Carte ESP32 GND ---> Masse (GND)
 
 
