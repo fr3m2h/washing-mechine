@@ -70,3 +70,7 @@ Schéma explicatif des branchements :
 * Carte ESP32 GND ---> Masse (GND)
 
 
+### Branchement de l'embarqué
+
+Comme nous avons fait le choix de lancer le backend et le frontend localement, le téléphone éumler n'a pas accès a ces 2 entités. Il y a donc 2 version de l'appli, la première sans les API et avec une URL d'example pour simuler la page web, ceci permet de montrer comment l'appli fonctionne si elle avait accès a une base de donner depuis l'API. Une seconde avec coder pour utiliser le backend mais qui ne peut ëtre tester a cause du problème expliquer précédemment.De plus cette version est au format .zip car certains dossier ne pouvait être transféré car il avait un nom trop long...
+
