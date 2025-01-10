@@ -13,6 +13,6 @@
     <string name="web_icon_description">"page web "</string>
     <string name="heuredepointe">heure de pointe\n</string>
     <string name="title_activity_rushhour">rushhour</string>
-    <string name="url">https://localhost:8000</string>
+    <string name="url">http://localhost:5173</string>
 
 </resources>
