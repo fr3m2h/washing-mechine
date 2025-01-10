@@ -23,7 +23,7 @@ On a donc essayé de contraindre le problème à des bases de données locales f
 ### Frontend web/mobile
 
 Notre application et site web seront là pour afficher les informations recueillies grâce à notre système embarqué. Nous pourrons afficher le temps restant, quelles machines sont actives ainsi que les plages horaires avec le plus de machines disponibles.
-Sur la page web, il est normal de ne voir aucune machine car la partie embarqué n'étant pas connecter au WiFi et donc au backend, la base de données reste vierge.
+Sur la page web, il est normal de ne voir aucune machine car nous n'avons pas réussi à connecter notre backend sur le cloud.
 
 ## Faire marcher le projet
 
