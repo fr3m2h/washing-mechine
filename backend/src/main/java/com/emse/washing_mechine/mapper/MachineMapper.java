@@ -9,6 +9,7 @@ public class MachineMapper {
                 machine.getId(),
                 machine.getName(),
                 machine.getIsUsed(),
+                machine.getIsHs(),
                 machine.getTimeLeft()
         );
     }

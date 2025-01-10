@@ -15,6 +15,7 @@ class MachineMapperTest {
                 1L,
                 "Machine1",
                 true,
+                false,
                 15.0
         );
 
@@ -26,6 +27,7 @@ class MachineMapperTest {
                 1L,
                 "Machine1",
                 true,
+                false,
                 15.0
         );
         Assertions.assertThat(machine).usingRecursiveComparison().isEqualTo(expectedMachine);

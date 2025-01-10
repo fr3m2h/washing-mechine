@@ -17,10 +17,10 @@ class MachineDaoTest {
 
     @Test
     void shouldFindUnusedMachines() {
-        MachineEntity machine1 = new MachineEntity("Machine 1", false, 0.0);
+        MachineEntity machine1 = new MachineEntity("Machine 1", false, false,0.0);
         machineDao.save(machine1);
 
-        MachineEntity machine2 = new MachineEntity("Machine 2", true, 20.0);
+        MachineEntity machine2 = new MachineEntity("Machine 2", true, false,20.0);
         machineDao.save(machine2);
 
         List<MachineEntity> unusedMachines = machineDao.findUnusedMachine();
@@ -32,7 +32,7 @@ class MachineDaoTest {
     @Test
     public void shouldFindMachineByName() {
         // Insert test data
-        MachineEntity machine = new MachineEntity("Test Machine", true, 15.0);
+        MachineEntity machine = new MachineEntity("Test Machine", true, false,15.0);
         MachineEntity savedMachine = machineDao.save(machine);
 
         // Execute query
@@ -43,16 +43,17 @@ class MachineDaoTest {
         Assertions.assertThat(foundMachine.getId()).isEqualTo(savedMachine.getId());
         Assertions.assertThat(foundMachine.getName()).isEqualTo("Test Machine");
         Assertions.assertThat(foundMachine.getIsUsed()).isTrue();
+        Assertions.assertThat(foundMachine.getIsHs()).isFalse();
         Assertions.assertThat(foundMachine.getTimeLeft()).isEqualTo(15.0);
     }
 
     @Test
     public void shouldDeleteMachineByName() {
         // Insert test data
-        MachineEntity machine = new MachineEntity("Machine To Delete", false, 10.0);
+        MachineEntity machine = new MachineEntity("Machine To Delete", false, false,10.0);
         machineDao.save(machine);
 
-        MachineEntity anotherMachine = new MachineEntity("Another Machine", true, 20.0);
+        MachineEntity anotherMachine = new MachineEntity("Another Machine", true, false,20.0);
         machineDao.save(anotherMachine);
 
         // Execute delete

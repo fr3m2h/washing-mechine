@@ -32,8 +32,8 @@ class MachineControllerTest {
     @Test
     void shouldFindAll() throws Exception {
         Mockito.when(machineDao.findAll()).thenReturn(List.of(
-                new MachineEntity(1L, "Machine1", true, 15.0),
-                new MachineEntity(2L, "Machine2", false, 20.0)
+                new MachineEntity(1L, "Machine1", true, false, 15.0),
+                new MachineEntity(2L, "Machine2", false, false,20.0)
         ));
 
         mockMvc.perform(MockMvcRequestBuilders.get("/api/machines").accept(MediaType.APPLICATION_JSON))
@@ -53,19 +53,20 @@ class MachineControllerTest {
 
     @Test
     void shouldFindById() throws Exception {
-        MachineEntity machineEntity = new MachineEntity(1L, "Machine1", true, 15.0);
+        MachineEntity machineEntity = new MachineEntity(1L, "Machine1", true, false,15.0);
         Mockito.when(machineDao.findById(1L)).thenReturn(Optional.of(machineEntity));
 
         mockMvc.perform(MockMvcRequestBuilders.get("/api/machines/1").accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Machine1"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.isUsed").value(true))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.isHs").value(false))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.timeLeft").value(15.0));
     }
 
     @Test
     void shouldNotUpdateUnknownEntity() throws Exception {
-        MachineCommand command = new MachineCommand("Machine1", true, 15.0);
+        MachineCommand command = new MachineCommand("Machine1", true, false,15.0);
         String json = objectMapper.writeValueAsString(command);
 
         Mockito.when(machineDao.findById(1L)).thenReturn(Optional.empty());
@@ -78,8 +79,8 @@ class MachineControllerTest {
 
     @Test
     void shouldUpdate() throws Exception {
-        MachineEntity machineEntity = new MachineEntity(1L, "Machine1", true, 15.0);
-        MachineCommand command = new MachineCommand("UpdatedMachine", false, 10.0);
+        MachineEntity machineEntity = new MachineEntity(1L, "Machine1", true, false,15.0);
+        MachineCommand command = new MachineCommand("UpdatedMachine", false, false,10.0);
         String json = objectMapper.writeValueAsString(command);
 
         Mockito.when(machineDao.findById(1L)).thenReturn(Optional.of(machineEntity));
@@ -90,13 +91,14 @@ class MachineControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("UpdatedMachine"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.isUsed").value(false))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.isHs").value(false))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.timeLeft").value(10.0));
     }
 
     @Test
     void shouldCreate() throws Exception {
-        MachineCommand command = new MachineCommand("Machine1", true, 15.0);
-        MachineEntity machineEntity = new MachineEntity(1L, "Machine1", true, 15.0);
+        MachineCommand command = new MachineCommand("Machine1", true, false,15.0);
+        MachineEntity machineEntity = new MachineEntity(1L, "Machine1", true, false,15.0);
         String json = objectMapper.writeValueAsString(command);
 
         Mockito.when(machineDao.save(Mockito.any(MachineEntity.class))).thenReturn(machineEntity);
@@ -107,6 +109,7 @@ class MachineControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Machine1"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.isUsed").value(true))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.isHs").value(false))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.timeLeft").value(15.0));
     }
 

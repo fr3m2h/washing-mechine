@@ -40,8 +40,9 @@ public class MachineController {
 
     @PostMapping //
     public ResponseEntity<MachineDto> create(@RequestBody MachineCommand machine) { //
-        MachineEntity entity = new MachineEntity(machine.name(),machine.isUsed(), machine.timeLeft());
+        MachineEntity entity = new MachineEntity(machine.name(),machine.isUsed(), machine.isHs(),machine.timeLeft());
         entity.setIsUsed(machine.isUsed());
+        entity.setIsUsed(machine.isHs());
         MachineEntity saved = machineDao.save(entity);
         return ResponseEntity.ok(MachineMapper.of(saved));
     }
@@ -53,6 +54,7 @@ public class MachineController {
             return ResponseEntity.badRequest().build();
         }
         entity.setIsUsed(machine.isUsed());
+        entity.setIsUsed(machine.isHs());
         entity.setName(machine.name());
         entity.setTimeLeft(machine.timeLeft());
         // (11)

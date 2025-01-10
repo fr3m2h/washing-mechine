@@ -16,56 +16,46 @@ public class MachineEntity {
     @Column(name = "is_used", nullable = false)
     private Boolean isUsed;
 
+    @Column(name = "is_hs", nullable = false)
+    private Boolean isHs = false;
+
     @Column(name = "time_left", nullable = false)
     private Double timeLeft;
 
     public MachineEntity(){
     }
 
-    public MachineEntity (String name, Boolean isUsed, Double timeLeft)
+    public MachineEntity (String name, Boolean isUsed, Boolean isHs,Double timeLeft)
     {
         this.name = name;
         this.isUsed = isUsed;
+        this.isHs = isHs;
         this.timeLeft = timeLeft;
     }
 
-    public MachineEntity (Long id, String name, Boolean isUsed, Double timeLeft)
+    public MachineEntity (Long id, String name, Boolean isUsed, Boolean isHs,Double timeLeft)
     {
         this.name = name;
         this.isUsed = isUsed;
+        this.isHs = isHs;
         this.timeLeft = timeLeft;
     }
 
     // getteur et setteur for id
-    public Long getId()
-    {
-        return this.id;
-    }
-    public void setId(Long id)
-    {
-        this.id=id;
-    }
+    public Long getId() {return this.id;}
+    public void setId(Long id) {this.id=id;}
 
     public String getName() {return this.name;}
-    public void setName(String name)
-    {
-        this.name=name;
-    }
+    public void setName(String name) {this.name=name;}
 
-    public Double getTimeLeft()
-    {
-        return this.timeLeft;
-    }
+    public Double getTimeLeft() {return this.timeLeft;}
     public void setTimeLeft(Double timeLeft) {this.timeLeft=timeLeft;}
 
-    public Boolean getIsUsed()
-    {
-        return this.isUsed;
-    }
-    public void setIsUsed(Boolean isUsed)
-    {
-        this.isUsed=isUsed;
-    }
+    public Boolean getIsUsed() {return this.isUsed;}
+    public void setIsUsed(Boolean isUsed) {this.isUsed=isUsed;}
+
+    public Boolean getIsHs() {return isHs;}
+    public void setIsHs(Boolean hs) {isHs = hs;}
 
 
 }
