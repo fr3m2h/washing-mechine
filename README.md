@@ -27,16 +27,18 @@ Notre applications et site web seront là pour afficher les informations recueil
     ./gradlew --continous bootRun
     ```
 
-3. Connectez-vous au serveur `http://localhost8080`
+3. Connectez-vous au serveur `http://localhost:8080`
 
 ### Lancement du serveur frontend
 1. Aller sur le dossier `frontend/`
-2. Utilisez la commande
+2. Utilisez les commande
 
     ```
+    npm install
     npm run dev
     ```
-3. Le site est disponible par défaut à l'URL http://localhost:5173/
+3. Le site est disponible par défaut à l'URL http://localhost:5173
+4. Vous pouvez modifier l'addresse du backend dans le ficher frontend/src/config.js
 
 
 ### Branchement de l'embarqué
