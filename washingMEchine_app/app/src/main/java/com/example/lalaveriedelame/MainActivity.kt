@@ -37,7 +37,7 @@
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
 
-            // Charger les machines depuis l'API
+            
             machineViewModel.loadMachines()
             val url = getString(R.string.url)
             setContent {
@@ -109,7 +109,7 @@
                     )
                 }
 
-                // Affichage de la liste des machines
+               
                 if (showMachineList) {
                     MachineListView(
                         machines = machines,
@@ -179,7 +179,7 @@
             },
             colors = colors,
             actions = {
-                // Icône pour redirection web
+                
                 IconButton(onClick = onWebIconClick) {
                     Icon(
                         painter = painterResource(R.drawable.ic_action_name),
@@ -187,7 +187,7 @@
                         tint = MaterialTheme.colorScheme.onSurface // Couleur de l'icône
                     )
                 }
-                // Icône pour afficher la liste des machines
+                
                 IconButton(onClick = onShowMachineListToggle) {
                     Icon(
                         painter = painterResource(R.drawable.ic_washing_list),
@@ -195,7 +195,7 @@
                         tint = MaterialTheme.colorScheme.onSurface // Couleur de l'icône
                     )
                 }
-                // Icône pour rediriger vers RushHourActivity
+                
                 IconButton(onClick = onRushHourClick) {
                     Icon(
                         painter = painterResource(R.drawable.ic_heuredepointe),

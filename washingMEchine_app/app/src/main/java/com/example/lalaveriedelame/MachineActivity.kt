@@ -31,11 +31,11 @@ class MachineActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Récupérer l'ID de la machine depuis l'Intent
+        
         val machineId = intent.getLongExtra("machine_id", -1L)
         val errorMessage = intent.getStringExtra("error_message")
 
-        // Charger la machine depuis l'API si l'ID est valide
+        
         if (machineId != -1L) {
             machineViewModel.loadMachineById(machineId)
         }
@@ -215,7 +215,7 @@ fun MachineTopAppBar(
             }
         },
         actions = {
-            // Icône pour rediriger vers le site web
+            
             IconButton(onClick = onWebIconClick) {
                 Icon(
                     painter = painterResource(R.drawable.ic_action_name),
@@ -223,7 +223,7 @@ fun MachineTopAppBar(
                     tint = MaterialTheme.colorScheme.onSurface // Couleur de l'icône
                 )
             }
-            // Icône pour rediriger vers l'activité RushHourActivity
+       
             IconButton(onClick = onRushHourClick) {
                 Icon(
                     painter = painterResource(R.drawable.ic_heuredepointe),

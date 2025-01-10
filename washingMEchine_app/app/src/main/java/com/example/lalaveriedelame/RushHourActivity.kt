@@ -89,7 +89,7 @@ fun RushHourScreen(
             ) {
                 when {
                     showMachineList -> {
-                        // Affiche la liste des machines
+                       
                         MachineListView(
                             machines = machines,
                             onMachineSelected = { machineId ->
@@ -110,7 +110,6 @@ fun RushHourScreen(
                         )
                     }
                     else -> {
-                        // Affiche la liste des jours
                         LazyColumn(
                             modifier = Modifier
                                 .fillMaxSize()
@@ -155,36 +154,34 @@ fun DayDetailsView(jour: JourDto, onBackToListClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState()) // Tout le contenu devient défilable
+            .verticalScroll(rememberScrollState()) 
             .padding(16.dp)
     ) {
-        // Titre
+        
         Text(
             text = "Détails pour ${jour.jour}",
             style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier.padding(bottom = 16.dp)
         )
-
-        // Total des utilisations
         Text(
             text = "Total des utilisations : ${jour.totalUtilisations}",
             style = MaterialTheme.typography.bodyLarge,
             modifier = Modifier.padding(bottom = 16.dp)
         )
 
-        // Graphique défilable
+        
         BarChart(
             data = jour.utilisationsParHeure.mapIndexed { index, value ->
                 "${index}h" to value
             }.toMap(),
             modifier = Modifier
                 .fillMaxWidth()
-                .height(700.dp) // Hauteur suffisante pour s'assurer que tout est visible
+                .height(700.dp) 
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Bouton "Retour à la liste"
+        
         Button(
             onClick = onBackToListClick,
             modifier = Modifier
@@ -216,7 +213,7 @@ fun BarChart(data: Map<String, Int>, modifier: Modifier = Modifier) {
         val stepX = contentWidth / maxData // Échelle pour l'axe des X, basé sur le maximum (8)
 
         val textPaint = android.graphics.Paint().apply {
-            color = android.graphics.Color.BLACK // Couleur du texte
+            color = android.graphics.Color.BLACK 
             textSize = 24f
             textAlign = android.graphics.Paint.Align.LEFT
         }
@@ -226,7 +223,7 @@ fun BarChart(data: Map<String, Int>, modifier: Modifier = Modifier) {
             val barLength = value * stepX
             val barY = xAxisPadding + index * (barHeight.toPx() + barSpacing.toPx())
 
-            // Dessin des barres
+            
             drawRect(
                 color = Color(0xFF32CD32), // Vert clair
                 topLeft = androidx.compose.ui.geometry.Offset(
@@ -236,7 +233,7 @@ fun BarChart(data: Map<String, Int>, modifier: Modifier = Modifier) {
                 size = Size(barLength, barHeight.toPx())
             )
 
-            // Texte pour les noms des jours
+            
             drawContext.canvas.nativeCanvas.drawText(
                 day,
                 xAxisPadding / 2,
@@ -245,7 +242,7 @@ fun BarChart(data: Map<String, Int>, modifier: Modifier = Modifier) {
             )
         }
 
-        // Dessin des labels pour l'axe des X
+        
         for (i in 0..maxData) {
             val xPosition = i * stepX
             drawContext.canvas.nativeCanvas.drawText(
@@ -256,7 +253,7 @@ fun BarChart(data: Map<String, Int>, modifier: Modifier = Modifier) {
             )
         }
 
-        // Dessin des axes
+  
         drawLine(
             color = Color.Black,
             start = androidx.compose.ui.geometry.Offset(0f, xAxisPadding),
@@ -302,7 +299,7 @@ fun RushHourTopAppBar(
             }
         },
         actions = {
-            // Icône pour redirection web
+            
             IconButton(onClick = onWebIconClick) {
                 Icon(
                     painter = painterResource(R.drawable.ic_action_name),
@@ -310,7 +307,6 @@ fun RushHourTopAppBar(
                     tint = MaterialTheme.colorScheme.onSurface // Couleur de l'icône (blanc ou clair)
                 )
             }
-            // Icône pour afficher la liste des jours
             IconButton(onClick = onShowMachineListToggle) {
                 Icon(
                     painter = painterResource(R.drawable.ic_washing_list),
