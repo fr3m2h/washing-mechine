@@ -1,7 +1,5 @@
 # Washing-MEchine
 
-## Introduction
-
 This project aims to develop a web and mobile interface to monitor the availability of washing machines at our studing housing laundry before going there to avoid wasting time and energy.
 
 ### Embedded System
